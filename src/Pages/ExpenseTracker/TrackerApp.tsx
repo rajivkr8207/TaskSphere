@@ -82,11 +82,9 @@ const TrackerApp: React.FC = () => {
       });
     }
 
-    console.log(expensetracker);
   };
 
   const handledelete = (index: number) => {
-    console.log(expenses[index]);
     if (expenses[index].isincome) {
       setIncome({ ...income, income: income.income - expenses[index].amount });
       setRemaintrack({
@@ -100,10 +98,9 @@ const TrackerApp: React.FC = () => {
       });
     }
 
-    const newexpense = expenses.filter((e, i) => i !== index);
+    const newexpense = expenses.filter((_, i) => i !== index);
     localStorage.setItem(Tracker, JSON.stringify(newexpense));
     setExpenses(newexpense);
-    console.log(index);
   };
 
   const handleaddincome = () => {
