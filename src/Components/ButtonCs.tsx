@@ -7,7 +7,8 @@ interface Mybuttonprops  {
 const ButtonCs:React.FC<Mybuttonprops>= (props) => {
   return (
     <>
-     <button id={props.id?.toString()} onClick={props.onclick} className='px-4 py-2 cursor-pointer text-white bg-gray-950 hover:bg-black font-semibold  capitalize rounded-lg'>
+     <button id={props.id?.toString()} onClick={props.onclick} className='px-3  py-2 cursor-pointer 
+     btn_style font-semibold  capitalize rounded-lg'>
         {props.name? props.name: null}</button> 
     </>
   )

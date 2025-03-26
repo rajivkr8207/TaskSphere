@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ButtonCs from "../../Components/ButtonCs";
 import InputCus from "../../Components/InputCus";
 import axios from "axios";
+import TopHeading from "../../Components/TopHeading";
 
 interface Weatherdata {
   name: string;
@@ -61,9 +62,7 @@ const Weather: React.FC = () => {
   return (
     <>
       <div className=" flex justify-center flex-col gap-5 items-center">
-        <h1 className="text-center capitalize text-5xl text-black font-semibold mt-4">
-          weather app{" "}
-        </h1>
+       <TopHeading name="weather app" />
         <div className="flex gap-3">
           <InputCus
             type="text"
@@ -76,7 +75,7 @@ const Weather: React.FC = () => {
       
       {(weather && error==false)  ?
       (
-        <div className="min-h-60 lg:w-96 w-full lg:mx-0 mx-2 bg-amber-200  border-2  p-5 rounded-xl shadow-2xl text-black">
+        <div className="min-h-60 lg:w-96 w-full lg:mx-0 mx-2  text_style card_style  p-5 rounded-xl shadow-2xl ">
         <p className="text-center text-3xl font-bold mb-2">Weather Details</p>
         <p className="text-center font-medium text-lg mb-4">{dates}</p>
         <div className="flex flex-col items-center gap-2">

@@ -1,6 +1,58 @@
 @import "tailwindcss";
+:root {
+  --bg-color: #FFFFFF;
+  --text-color: #1E1E1E;
+  --card-bg: #fafafa;
+  --btn-bg: #000000;
+  --btn-bg-hover: #ffffff;
+  --btn-text: #FFFFFF;
+  --btn-text-hover: #000000;
+  --btn-border: #000000;
+}
+.dark{
+  --bg-color: #1E1E1E;
+  --text-color: #FFFFFF;
+  --card-bg: #2F2F2F;
+  --btn-bg: #FFFFFF;
+  --btn-bg-hover: #000000;
+  --btn-text: #000000;
+  --btn-text-hover: #ffffff;
+  --btn-border: #FFFFFF;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.navbar_style{
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+.btn_style{
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: 2px solid var(--btn-border);
+}
+.btn_style:hover{
+  background-color: var(--btn-bg-hover);
+  color: var(--btn-text-hover);
+  border: 2px solid var(--btn-border);
+  transition: all 0.3s ease;
+}
+.card_style{
+  background-color: var(--card-bg);
+  border: 2px solid var(--btn-border);
+}
+.text_style{
+  color: var(--text-color);
+}
+.card_link_style{
+  background: var(--bg-color);
+  color: var(--text-color);
+  text-decoration: none;
+  border: 1px solid black;
 
-/* body{
-  background: black;
-  color: white;
-} */
+}
+.card_link_style:hover{
+  background: var(--btn-bg-hover);
+  transition: all 0.3s ease;
+}

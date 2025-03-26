@@ -5,6 +5,7 @@ import { MdEditSquare } from "react-icons/md";
 import { IoCheckmarkDoneCircle } from "react-icons/io5";
 import TodoShow from "./TodoShow";
 import InputCus from "../../Components/InputCus";
+import TopHeading from "../../Components/TopHeading";
 // import TodoShow from "./TodoShow";
 interface todos {
   id: number;
@@ -128,21 +129,19 @@ const handletodoview = (id:number)=>{
     {view && todoshow && <TodoShow todoshow={todoshow} setView={setView} />}
 
       <div className=" flex justify-center flex-col gap-5 items-center">
-        <h1 className="text-center text-5xl text-black font-semibold mt-4">
-          Todo App{" "}
-        </h1>
+        <TopHeading  name="todo app" />
         <div className="flex  gap-3">
           <InputCus type={"text"} value={values.title} onChange={handlechange} placeholder={"Add Todo..."} />
           <ButtonCs onclick={handleAddTodo} name={"addTodo"} />
         </div>
-        <div className="min-h-60 lg:min-w-98 min-w-full bg-amber-200 border-2 p-3 shadow-2xl rounded-xl">
+        <div className="min-h-60 lg:min-w-98 min-w-full card_style border-2 p-3 shadow-2xl rounded-xl">
           <ul className="flex flex-col gap-3">
             {alltodo?.map((item, index) => {
               return (
                 <li
                   key={index}
                   
-                  className={`w-full px-1 py-2 relative border rounded-lg ${
+                  className={`w-full px-1 py-2 relative  text_style card_style  rounded-lg ${
                     item.completed && "bg-green-400"
                   }`}
                 >
