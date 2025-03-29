@@ -13,7 +13,7 @@ interface todos {
   completed: boolean;
 }
 const TodoApp: React.FC = () => {
-  const todostore: string = "typestore";
+  const todostore: string = "todostore";
   const [alltodo, setAlltodo] = useState<todos[]>([]);
   const [edit, setEdit] = useState<boolean>(false);
   const [values, setValues] = useState<todos>({
@@ -46,7 +46,7 @@ const TodoApp: React.FC = () => {
   const handleAddTodo = () => {
     const newTodo = {
       id: Date.now(),
-      title: values.title,
+      title: values.title.trim(),
       completed: false,
     };
     if (edit) {
@@ -69,6 +69,7 @@ const TodoApp: React.FC = () => {
         const store = localStorage.getItem(todostore);
         const newStore = store ? [...JSON.parse(store), newTodo] : [newTodo];
         localStorage.setItem(todostore, JSON.stringify(newStore));
+        console.log(newTodo)
         setValues({
           id: 0,
           title: "",
@@ -134,7 +135,7 @@ const handletodoview = (id:number)=>{
           <InputCus type={"text"} value={values.title} onChange={handlechange} placeholder={"Add Todo..."} />
           <ButtonCs onclick={handleAddTodo} name={"addTodo"} />
         </div>
-        <div className="min-h-60 lg:min-w-98 min-w-full card_style border-2 p-3 shadow-2xl rounded-xl">
+        <div className="min-h-60 lg:min-w-98 min-w-full card_style p-3 shadow-lg rounded-xl">
           <ul className="flex flex-col gap-3">
             {alltodo?.map((item, index) => {
               return (

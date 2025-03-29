@@ -5,7 +5,7 @@ interface Props {
 const TopHeading:React.FC<Props> = (props) => {
   return (
     <>
-      <h1 className="text-center lg:text-5xl text-4xl capitalize text_style font-semibold mt-4">
+      <h1 className="text-center lg:text-5xl text-4xl capitalize text_style font-semibold pt-4">
                 {props.name}
               </h1>
     </>

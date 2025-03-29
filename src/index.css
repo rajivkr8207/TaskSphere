@@ -40,7 +40,7 @@ body {
 }
 .card_style{
   background-color: var(--card-bg);
-  border: 2px solid var(--btn-border);
+  border: 2px solid var(--btn-border);  
 }
 .text_style{
   color: var(--text-color);

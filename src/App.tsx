@@ -7,6 +7,9 @@ import Main from "./Pages/Main/Main";
 import Notepad from "./Pages/NotepadApp/Notepad";
 import CalculatorApp from "./Pages/CalculatorApp/CalculatorApp";
 import TrackerApp from "./Pages/ExpenseTracker/TrackerApp";
+import NoteAdd from "./Pages/NotepadApp/NoteAdd";
+import NotepadRead from "./Pages/NotepadApp/NotepadRead";
+import NoteEdit from "./Pages/NotepadApp/NoteEdit";
 
 const App: React.FC = () => {
   return (
@@ -20,6 +23,9 @@ const App: React.FC = () => {
           <Route path="/tracker" element={<TrackerApp />} />
           <Route path="/calculator" element={<CalculatorApp />} />
           <Route path="/notepad" element={<Notepad />} />
+          <Route path="/notepad/addnote" element={<NoteAdd />} />
+          <Route path="/notepad/read/:id" element={<NotepadRead />} />
+          <Route path="/notepad/edit/:id" element={<NoteEdit />} />
         </Routes>
       </Router>
     </>

@@ -35,7 +35,6 @@ const TrackerApp: React.FC = () => {
   const handleamountchange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setExpensetracker({ ...expensetracker, amount: parseInt(e.target.value) });
   };
-
   useEffect(() => {
     const store = localStorage.getItem(Tracker);
     if (store) {
@@ -146,7 +145,7 @@ const TrackerApp: React.FC = () => {
             </h5>
             <p
               className={` ${
-                remaintrack.remain < 0 ? "text-red-400" : "text-green-400 "
+                remaintrack.remain < 0 ? "text-red-500" : "text-green-400 "
               }  text-center font-semibold text-2xl`}
             >
               ₹{remaintrack.remain}
@@ -156,7 +155,7 @@ const TrackerApp: React.FC = () => {
             <h5 className="text-center text_style font-medium text-lg">
               Expense balance
             </h5>
-            <p className="text-center text-red-400 font-semibold text-2xl">
+            <p className="text-center text-red-500 font-semibold text-2xl">
               ₹ {remaintrack.expense > 0 && "-"}
               {remaintrack.expense}
             </p>

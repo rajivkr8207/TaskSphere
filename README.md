@@ -5,8 +5,8 @@
 ✅ To-Do App – Manage tasks efficiently.  
 ✅ Weather App – Get real-time weather updates.  
 ✅ Expense Tracker – Track income and expenses easily.  
+✅ Notepad – Save and manage notes. 
 ⏳ Calculator – Coming soon.  
-⏳ Notepad – Coming soon.
 
 ---
 
@@ -14,8 +14,8 @@
 - **To-Do App:** Add, edit, and delete tasks to stay organized.
 - **Weather App:** Check real-time weather conditions with ease.
 - **Expense Tracker:** Record income and expenses with detailed tracking.
+- **Notepad:** Save and manage notes. 
 - **Calculator:** Perform quick calculations. *(Coming soon)*
-- **Notepad:** Save and manage notes. *(Coming soon)*
 
 ---
 
@@ -65,14 +65,13 @@ http://localhost:5173
 
 - /tracker – Expense Tracker
 
-- /calculator – Calculator (Coming Soon)
+- /notepad – Notepad
 
-- /notepad – Notepad (Coming Soon)
+- /calculator – Calculator (Coming Soon)
 
 ## 📢 Upcoming Features
 - 📚 Calculator App: Perform quick and easy calculations.
 
-- 📝 Notepad App: Save and organize your notes.
 
 ## 📧 Contact
 For any inquiries, feel free to contact me at  [https://github.com/rajivkr8207](https://github.com/rajivkr8207)
