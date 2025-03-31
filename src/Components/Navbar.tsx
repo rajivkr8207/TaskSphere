@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { FaSun, FaMoon } from "react-icons/fa";
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -73,16 +72,17 @@ const Navbar: React.FC = () => {
             onClick={handleisdarkToggle}
             className=" flex justify-center items-center cursor-pointer"
           >
-            {isDark ? (
-              <FaSun className="text-2xl " />
-            ) : (
-              <FaMoon className="text-2xl " />
-            )}
+            <div className="themetoggle relative w-12 h-6 rounded-full py-1 flex justify-between items-center">
+              <span>🌜</span>
+              <span>🌞</span>
+              <span className={`w-5 h-5 rounded-full  absolute ${isDark ? 'left-0 bg-black' : 'right-0 bg-white'}`}></span>
+            </div> 
           </button>
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden focus:outline-none"
           >
+            
             {isOpen ? <IoClose size={24} /> : <CiMenuFries size={24} />}
           </button>
         </div>
@@ -108,11 +108,11 @@ const Navbar: React.FC = () => {
             onClick={handleisdarkToggle}
             className=" lg:flex hidden justify-center items-center cursor-pointer"
           >
-            {isDark ? (
-              <FaSun className="text-xl " />
-            ) : (
-              <FaMoon className="text-xl " />
-            )}
+            <div className="themetoggle relative w-12 h-6 rounded-full py-1 flex justify-between items-center">
+              <span>🌜</span>
+              <span>🌞</span>
+              <span className={`w-5 h-5 rounded-full  absolute ${isDark ? 'left-0 bg-black' : 'right-0 bg-white'}`}></span>
+            </div>  
           </li>
         </ul>
       </div>

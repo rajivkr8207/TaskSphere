@@ -4,6 +4,11 @@ import ButtonCs from "../../Components/ButtonCs";
 import { toast, ToastContainer } from "react-toastify";
 import { IoCloseSharp } from "react-icons/io5";
 import TopHeading from "../../Components/TopHeading";
+import { Pie } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { ChartOptions } from "chart.js";
+// Register chart elements
+ChartJS.register(ArcElement, Tooltip, Legend);
 interface ExpenseTrack {
   name: string;
   amount: number;
@@ -29,6 +34,25 @@ const TrackerApp: React.FC = () => {
   const [addexpense, setAddexpense] = useState<boolean>(false);
   const [addincomeis, setAddincomeis] = useState<boolean>(true);
 
+  const data = {
+    labels: ["Remain", "Expense"],
+    datasets: [
+      {
+        label: "Balance",
+        data: [remaintrack.remain, remaintrack.expense],
+        backgroundColor: ["#00C40A", "#FB2C36"],
+      },
+    ],
+  };
+
+  const options: ChartOptions<"pie"> = {
+    responsive: true,
+    plugins: {
+      legend: { position: "bottom" },
+      title: { display: true, text: "Expense Tracker", color:"red" },
+    },
+  };
+
   const handlenamechange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setExpensetracker({ ...expensetracker, name: e.target.value });
   };
@@ -40,6 +64,9 @@ const TrackerApp: React.FC = () => {
     if (store) {
       const data: [ExpenseTrack] = JSON.parse(store);
       setExpenses(data);
+      if (data.length > 0) {
+        setAddincomeis(false);
+      }
       const isadminamoount = data
         .filter((item) => item.isincome)
         .map((item) => item.amount);
@@ -57,6 +84,7 @@ const TrackerApp: React.FC = () => {
       });
     }
   }, []);
+
   const handleaddexpense = () => {
     if (expensetracker.name != "" && expensetracker.amount > 0) {
       setExpenses([...expenses, expensetracker]);
@@ -132,12 +160,15 @@ const TrackerApp: React.FC = () => {
       <div className="w-full min-h-[88vh  absolute top-17">
         <TopHeading name="Expense Tracker" />
         <div className="flex justify-center items-center flex-col my-2">
-          <h5 className="text-2xl font-semibold text_style capitalize">your Income </h5>
+          <h5 className="text-2xl font-semibold text_style capitalize">
+            your Income{" "}
+          </h5>
           <p className="text-3xl font-bold text-green-500">
             {" "}
             ₹ {income.income}{" "}
           </p>
         </div>
+
         <div className="flex lg:justify-center gap-3 justify-between ">
           <div className="w-42 h-24  p-2  border-2 flex justify-center gap-3  flex-col ">
             <h5 className="text-center text_style font-medium text-lg">
@@ -162,7 +193,7 @@ const TrackerApp: React.FC = () => {
           </div>
         </div>
 
-        <div className=" flex justify-center my-3 ">
+        <div className={`flex justify-center mt-3 ${expenses.length > 0 && "mb-3"}`}>
           <table className="lg:w-[60vw] w-full lg:mx-0 mx-2 border border-blac    k">
             <thead>
               <tr className="text_style capitalize">
@@ -202,16 +233,17 @@ const TrackerApp: React.FC = () => {
                     </tr>
                   );
                 })
-              ) : (
-                <div>
-                  <p className="text-center text-red-400 font-semibold text-2xl">
-                    No Data
-                  </p>
-                </div>
-              )}
+              ) : null}
             </tbody>
           </table>
         </div>
+          {expenses.length <= 0 && (
+                <div>
+                  <p className="text-center lg:w-7/12 w-11/12 mx-auto card_style mb-3 text-red-500 font-semibold text-2xl">
+                    No Data Found
+                  </p>
+                </div>
+              )}
         <div className="my-1 flex justify-around">
           <ButtonCs
             name="add expense"
@@ -325,7 +357,13 @@ const TrackerApp: React.FC = () => {
             </div>
           </div>
         )}
+        {expenses.length > 0 && (
+          <div className="w-96 mx-auto my-5">
+            <Pie data={data} options={options} />
+          </div>
+        )}
       </div>
+
       <ToastContainer />
     </>
   );

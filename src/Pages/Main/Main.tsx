@@ -6,11 +6,11 @@ const Main:React.FC = () => {
         { name: 'To-Do App', path: '/todo', description: 'Manage your daily tasks efficiently.' },
         { name: 'Weather App', path: '/weather', description: 'Get real-time weather updates.' },
         { name: 'Expense Tracker', path: '/tracker', description: 'Track your income and expenses.' },
-        { name: 'Calculator', path: '/calculator', description: 'Perform quick calculations.' },
         { name: 'Notepad', path: '/notepad', description: 'Jot down your important notes.' },
+        { name: 'Calculator', path: '/calculator', description: 'Perform quick calculations.' },
     ]
   return (
-    <div className="w-full lg:h-screen h-auto my-2  flex justify-center items-center">
+    <div className="w-full lg:h-[87vh] h-auto my-2  flex justify-center items-center">
     <div className="w-12/12 max-w-4xl p-6 card_style shadow-2xl lg:border rounded-2xl">
         <h1 className="lg:text-4xl text-3xl font-bold text-center text_style mb-6">Welcome to TaskSphere</h1>
         <p className="text-lg text-center text_style mb-8">All your essential tools in one place.</p>

@@ -37,7 +37,6 @@ const Notepad: React.FC = () => {
     refreshnotepad();
   };
   const handleispin = (id: number) => {
-    console.log(id);
     const allnote = localStorage.getItem(notename);
     const allnoteslg = allnote ? JSON.parse(allnote) : [];
     const ispinmax =
@@ -50,7 +49,6 @@ const Notepad: React.FC = () => {
           0
         ) || 0;
 
-    console.log(ispinmax);
     const newnotes = allnoteslg.map((item: Notes) => {
       if (item.id === id) {
         return {
@@ -92,7 +90,7 @@ const Notepad: React.FC = () => {
           <GoPlus className="text-3xl font-semibold" />
         </Link>
       </div>
-      <div className="h-auto  mb-3">
+      <div className="h-auto  my-3">
         {ispinnotes.length > 0 && (
           <h3 className="text-2xl font-semibold capitalize ml-5">
             Pinned note
