@@ -19,6 +19,9 @@
   --btn-text-hover: #ffffff;
   --btn-border: #FFFFFF;
 }
+html{
+  overflow-x: hidden;
+}
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -49,7 +52,7 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   text-decoration: none;
-  border: 1px solid black;
+  border: 1px solid var(--btn-bg);
 
 }
 .card_link_style:hover{
@@ -60,4 +63,13 @@ body {
   background: var(--text-color);
   color: var(--bg-color);
   border: 1px solid black;
+}
+.calcul_btn{
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-weight: 600;
+}
+.link_style{
+  background: var(--btn-bg);
+  color: var(--btn-text);
 }

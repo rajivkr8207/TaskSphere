@@ -357,8 +357,8 @@ const TrackerApp: React.FC = () => {
             </div>
           </div>
         )}
-        {expenses.length > 0 && (
-          <div className="w-96 mx-auto my-5">
+        {(income.income >0 && remaintrack.remain >= 0 )  && (
+          <div className="lg:w-96 w-88 mx-auto my-5">
             <Pie data={data} options={options} />
           </div>
         )}
