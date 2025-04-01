@@ -5,7 +5,7 @@
 ✅ To-Do App – Manage tasks efficiently.  
 ✅ Weather App – Get real-time weather updates.  
 ✅ Expense Tracker – Track income and expenses easily.  
-✅ Notepad – Save and manage notes. 
+✅ Notepad – Save and manage notes.       
 ✅ Calculator – Perform quick calculations.
 
 ---
